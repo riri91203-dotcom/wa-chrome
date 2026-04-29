@@ -94,7 +94,7 @@ npm install
 - `activeTab`：访问当前标签页
 - `storage`：本地存储
 - `tabs`：标签页管理
-- `https://web.whatsapp.com/*`：访问WhatsApp Web
+- `https://www.whatsapp.com/*`：访问WhatsApp Web
 
 ## 贡献
 
