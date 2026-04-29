@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsApp Auto Reply",
+  "version": "1.0.0",
+  "description": "WhatsApp Web 自动回复、PDF 手册发送、客户队列扫描插件",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/*",
+    "http://127.0.0.1:8000/*",
+    "http://localhost:8000/*",
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "src/background/task-bridge.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "WhatsApp 自动回复"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["src/content/visibility-guard.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["src/content/bootstrap-loader.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/content/*.js",
+        "src/utils/*.js"
+      ],
+      "matches": ["https://web.whatsapp.com/*"]
+    }
+  ]
+}
