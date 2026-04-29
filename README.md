@@ -28,7 +28,7 @@
 
 ## 使用方法
 
-1. 安装扩展后，打开WhatsApp Web (https://web.whatsapp.com)。
+1. 安装扩展后，打开WhatsApp Web (https://www.whatsapp.com/)。
 2. 点击扩展图标打开弹出窗口。
 3. 根据需要配置设置。
 4. 扩展将自动开始监控和处理消息。
